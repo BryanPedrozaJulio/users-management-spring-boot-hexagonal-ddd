@@ -26,11 +26,11 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-@Slf4j
-@Repository
-@ConditionalOnProperty(name = "db.engine", havingValue = "mysql", matchIfMissing = true)
-@RequiredArgsConstructor
-public class UserRepositoryMySQL
+  @Slf4j
+  @Repository
+  @ConditionalOnProperty(name = "db.engine", havingValue = "postgresql")
+  @RequiredArgsConstructor
+  public class UserRepositoryPostgreSQL
     implements SaveUserPort,
         UpdateUserPort,
         GetUserByIdPort,

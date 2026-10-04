@@ -78,14 +78,20 @@
       <version>${mysql.connector.version}</version>
     </dependency>
 
-    <!-- JavaMail API (javax.mail legacy — NO migrado a jakarta.mail, intencional) -->
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- JavaMail API (javax.mail legacy  NO migrado a jakarta.mail, intencional) -->
     <dependency>
       <groupId>com.sun.mail</groupId>
       <artifactId>javax.mail</artifactId>
       <version>${javamail.version}</version>
     </dependency>
 
-    <!-- BCrypt para hashing de contraseñas -->
+    <!-- BCrypt para hashing de contrasenas -->
     <dependency>
       <groupId>at.favre.lib</groupId>
       <artifactId>bcrypt</artifactId>
@@ -110,16 +116,16 @@
       <scope>runtime</scope>
     </dependency>
 
-    <!-- SpringDoc OpenAPI — Swagger UI en /swagger-ui.html -->
+    <!-- SpringDoc OpenAPI  Swagger UI en /swagger-ui.html -->
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       <version>2.6.0</version>
     </dependency>
 
-    <!-- Swagger annotations — declarada explícitamente para que el IDE las indexe
+    <!-- Swagger annotations  declarada explicitamente para que el IDE las indexe
          (springdoc-openapi la incluye transitivamente, pero algunos IDEs
-          necesitan verla directa en el pom para resolver los símbolos) -->
+          necesitan verla directa en el pom para resolver los simbolos) -->
     <dependency>
       <groupId>io.swagger.core.v3</groupId>
       <artifactId>swagger-annotations-jakarta</artifactId>
@@ -138,7 +144,7 @@
     <!-- Tests                                                      -->
     <!-- ======================================================== -->
 
-    <!-- Starter de test: JUnit 5, Mockito, AssertJ — gestionados por BOM -->
+    <!-- Starter de test: JUnit 5, Mockito, AssertJ  gestionados por BOM -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
@@ -160,7 +166,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <!-- Clase principal explícita — evita fallo de detección antes de PR-02 -->
+          <!-- Clase principal explicita  evita fallo de deteccion antes de PR-02 -->
           <mainClass>com.jcaa.usersmanagement.Main</mainClass>
           <!-- Excluir Lombok del JAR final -->
           <excludes>
@@ -172,8 +178,8 @@
         </configuration>
       </plugin>
 
-      <!-- Compilador: versión y source/target gestionados por el parent via java.version -->
-      <!-- Se conserva solo la configuración del annotation processor de Lombok           -->
+      <!-- Compilador: version y source/target gestionados por el parent via java.version -->
+      <!-- Se conserva solo la configuracion del annotation processor de Lombok           -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -188,13 +194,13 @@
         </configuration>
       </plugin>
 
-      <!-- Surefire: versión gestionada por el parent -->
+      <!-- Surefire: version gestionada por el parent -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
       </plugin>
 
-      <!-- JaCoCo: cobertura de código -->
+      <!-- JaCoCo: cobertura de codigo -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
